@@ -1,12 +1,8 @@
 Rails.application.routes.draw do
   
-  get 'topics/index'
-
-  get 'topics/show'
-
-  get 'topics/new'
-
-  get 'topics/edit'
+  resources :topics, except: [:new] do
+    resources :bookmarks, except: [:index]
+  end
 
   devise_for :users
   root to: 'welcome#home'
