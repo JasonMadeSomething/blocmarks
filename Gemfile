@@ -40,3 +40,5 @@ gem 'mailgun-ruby', '~>1.0.2', require: 'mailgun'
 gem 'faker'
 
 gem 'best_in_place', '~> 3.0.1'
+
+gem 'will_paginate-bootstrap'
