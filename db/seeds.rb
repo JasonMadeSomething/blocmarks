@@ -10,4 +10,4 @@ me.save!
 users = User.all
 10.times {Topic.create!(title: Faker::Lorem.word, user: users.sample)}
 topics = Topic.all
-100.times {Bookmark.create!(url: Faker::Internet.url, topic: topics.sample)}
+100.times {Bookmark.create!(url: "google.com", topic: topics.sample)}
