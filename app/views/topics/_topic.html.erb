@@ -4,17 +4,7 @@
     </div>
     <div class="panel-body">
         <div class="row">
-            <% topic.bookmarks.each do |b| %>
-                <div class="col-md-4">
-                    <div class="thumbnail">
-                        <img src="#" alt="...">
-                        <div class="caption">
-                            <p>Like/unlike (placeholder)</p>
-                            <p><%= b.url %></p>
-                        </div>
-                    </div>
-                </div>
-            <% end %> 
+            <%= will_paginate topic.bookmarks, renderer: BootstrapPagination::Rails %>
         </div>
     </div>
 </div>
