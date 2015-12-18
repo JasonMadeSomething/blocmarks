@@ -4,7 +4,17 @@
     </div>
     <div class="panel-body">
         <div class="row">
-            <%= will_paginate topic.bookmarks, renderer: BootstrapPagination::Rails %>
+            <% a = topic.bookmarks.in_groups_of(3, false) %>
+            <%= content_tag :div, class:"carousel slide", id:"carousel-for-topic-#{topic.id}", data: {ride: "carousel"} do %>
+                <div class="carousel-inner" role="listbox">
+                    <% a.each_with_index do |mark, i| %>
+                        <% active = " active" if i == 0 %>
+                        <div class=<%="item#{active}"%>>
+                            <%= render mark %>
+                        </div>
+                    <% end %>
+                </div>
+            <% end %>
         </div>
     </div>
 </div>
