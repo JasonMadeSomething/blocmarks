@@ -10,6 +10,11 @@
   <body>
     <div class="container">
       <ul class="nav nav-tabs">
+        <div class="pull-left">
+          <% if user_signed_in? %>
+            <%= link_to "Home", topics_path, class: 'navbar-link' %>
+          <% end %>
+        </div>
         <div class="pull-right">
           <% if user_signed_in? %>
             Signed in as: <strong><%= current_user.user_name %></strong> |

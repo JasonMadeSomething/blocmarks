@@ -42,3 +42,5 @@ gem 'faker'
 gem 'best_in_place', '~> 3.0.1'
 
 gem 'embedly'
+
+gem 'sidekiq'

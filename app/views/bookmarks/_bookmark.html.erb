@@ -1,11 +1,11 @@
 <% obj = display_obj(bookmark.url) %>
 <div class="col-md-4">
     <div class="thumbnail">
-        <img src=<%= (obj.thumbnail_url).html_safe %>>
+        <img src=<%= (obj[:thumbnail_url]).html_safe %>>
     </div>
     <div class="caption text-center">
-        <h3><%= (obj.title).html_safe %></h3>
-        <p><%= (obj.description).html_safe %></p>
+        <h3><a href=<%= url_with_protocol(bookmark.url) %>><%= (obj[:title]).html_safe %></a></h3>
+        <p><%= (obj[:description]).html_safe %></p>
     </div>    
 </div>
 

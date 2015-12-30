@@ -1,2 +1,9 @@
-<h1>Topics#show</h1>
-<p>Find me in app/views/topics/show.html.erb</p>
+
+<div class="page-header">
+    <h1 class="text-center"><%= "##{@topic.title}" %></h1>
+</div>
+
+<div class="row">
+    <%= render @topic.bookmarks %>
+</div>
+

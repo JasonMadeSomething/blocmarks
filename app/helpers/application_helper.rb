@@ -23,4 +23,8 @@ module ApplicationHelper
       obj = (embedly_api.oembed url: url).first
       ret = {thumbnail_url: obj.thumbnail_url, title: obj.title, description: obj.description}
     end
+    
+    def url_with_protocol(url)
+      /^http/i.match(url) ? url : "http://#{url}"
+    end
 end
