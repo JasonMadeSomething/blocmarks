@@ -4,7 +4,7 @@
         <img src=<%= (obj[:thumbnail_url]).html_safe %>>
     </div>
     <div class="caption text-center">
-        <h3><a href=<%= url_with_protocol(bookmark.url) %>><%= (obj[:title]).html_safe %></a></h3>
+        <h3><%= link_to (obj[:title]).html_safe, url_with_protocol(bookmark.url)  %></h3>
         <p><%= (obj[:description]).html_safe %></p>
     </div>    
 </div>
