@@ -37,9 +37,9 @@ class TopicsController < ApplicationController
     @new_topic = Topic.new
     
     if @topic.save
-      flash[:notice] = "Topic created successfully."
+      flash.now[:notice] = "Topic created successfully."
     else
-      flash[:error] = "Topic could not be created."
+      flash.now[:error] = "Topic could not be created."
     end
     
     respond_to do |format|

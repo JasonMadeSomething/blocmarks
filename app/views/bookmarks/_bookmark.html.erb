@@ -1,7 +1,7 @@
 <% obj = display_obj(bookmark.url) %>
 <div class="col-md-4">
     <div class="thumbnail">
-        <img src=<%= (obj[:thumbnail_url]).html_safe %>>
+        <%= link_to image_tag((obj[:thumbnail_url]).html_safe), url_with_protocol(bookmark.url)  %>
     </div>
     <div class="caption text-center">
         <h3><%= link_to (obj[:title]).html_safe, url_with_protocol(bookmark.url)  %></h3>

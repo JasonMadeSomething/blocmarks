@@ -1,0 +1,10 @@
+<% if @topic.valid? %>
+    $("#topic-list").append("<%= escape_javascript(render(@topic)) %>");
+    $('.flash').prepend("<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert'>&times;</button><%= flash[:notice] %></div>");
+    $("#topic-form").html("<%= escape_javascript(render 'topics/form', topic: @new_topic) %>");
+    $("#topic-form").fadeOut();
+<% else %>
+    $('.flash').prepend("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert'>&times;</button><%= flash[:error] %></div>");
+    $("#topic-form").html("<%= escape_javascript(render 'topics/form', topic: @topic) %>");
+<% end %>
+$('.alert').delay(5000).fadeOut();
