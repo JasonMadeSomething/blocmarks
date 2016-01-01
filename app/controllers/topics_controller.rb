@@ -7,30 +7,6 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:id])
   end
 
-  def edit
-    @topic = Topic.find(params[:id])
-    respond_to do |format|
-      format.html
-      format.js
-    end
-  end
-  
-  def update
-    @topic = Topic.find(params[:id])
-    
-    @topic.update_attributes(topic_params)
-    
-    if @topic.save
-      flash[:notice] = "Topic was successfully updated"
-    else
-      flash[:error] = "Topic could not be updated"
-    end
-    
-    respond_to do |format|
-      format.html
-      format.js
-    end
-  end
   
   def create
     @topic = current_user.topics.new(topic_params)

@@ -4,6 +4,4 @@
 $ ->
     $("#add-icon").click ->
         $("#topic-form").removeClass("hidden")
-            
-    
     
