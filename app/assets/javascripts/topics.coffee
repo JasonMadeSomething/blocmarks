@@ -19,3 +19,4 @@ $ ->
                 next = $(this).siblings(':first')
             next.children(':first-child').clone().appendTo $(this)
             i++
+    

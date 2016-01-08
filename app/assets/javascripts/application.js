@@ -14,9 +14,3 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
-
- $(document).ready(function(){
-     $('p a').embedly({
-         key: '31169d148f114621a4d2de455ecbbdb3'
-     });
- });
