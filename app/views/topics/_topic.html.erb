@@ -8,9 +8,13 @@
             <% end %>
         </h2>
     </div>
-    <div class="panel-body">
-        <div class="row">
-            <%= render partial: '/bookmarks/bookmark', collection: topic.bookmarks, locals: {obj: "item" } %>
+    <div class="panel-body" style="min-height:400px !important;">
+        <div class="carousel" data-ride="carousel" data-interval="false" id=<%="#{topic.title}Carousel"%>>
+            <div class="carousel-inner">
+                <%= render partial: '/bookmarks/bookmark', collection: topic.bookmarks, locals: {obj: "item" } %>
+            </div>
+            <a class="left carousel-control" href=<%="##{topic.title}Carousel"%> data-slide="prev"></i></a>
+            <a class="right carousel-control" href=<%="##{topic.title}Carousel"%> data-slide="next"></i></a>
         </div>
     </div>
 </div>

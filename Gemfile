@@ -29,7 +29,7 @@ gem 'coffee-rails', '~> 4.1.0'
 
 gem 'jquery-rails'
 
-gem 'turbolinks'
+# gem 'turbolinks'
 
 gem 'bootstrap-sass'
 

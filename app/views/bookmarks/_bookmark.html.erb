@@ -1,4 +1,10 @@
 <%= content_tag :div, class: obj do %>
-    <a class="embedly-card" data-card-theme="light" href=<%= url_with_protocol(bookmark.url) %>></a>
+    <% if obj == "item" %>
+        <div class="col-md-3">
+    <% end %>        
+    <a class="embedly-card" data-card-theme="light" data-card-chome="0" data-card-controls="0" href=<%= url_with_protocol(bookmark.url) %>></a>
+    <% if obj == "item" %>
+        </div>
+    <% end %>
 <% end %>
 
