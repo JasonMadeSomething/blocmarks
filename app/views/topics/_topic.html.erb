@@ -1,7 +1,7 @@
 <div class="panel panel-default" id=<%="#{topic.id}-panel" %>>
     <div class="panel-heading">
         <h2 class="panel-title"><%= link_to "##{topic.title}", topic %>
-            <% if current_user == topic.user %>
+            <% if policy(topic).destroy? %>
                 <%= link_to topic, method: :delete, remote: true, title: "Delete topic", data: {confirm: "Do you want to delete #{topic.title}?"} do %>
                     <i class="glyphicon glyphicon-remove pull-right" style="color:red"></i>
                 <% end %>

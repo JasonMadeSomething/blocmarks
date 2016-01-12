@@ -2,7 +2,7 @@ class BookmarksController < ApplicationController
 
   def destroy
     @bookmark = Bookmark.find(params[:id])
-    
+    authorize @bookmark
     if @bookmark.destroy
       flash[:notice] = "Bookmark was deleted"
     else

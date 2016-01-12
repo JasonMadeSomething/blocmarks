@@ -11,4 +11,4 @@ users = User.all
 10.times {Topic.create!(title: Faker::Lorem.word, user: users.sample)}
 topics = Topic.all
 urls = ["google.com", "reddit.com", "nytimes.com", "whitehouse.gov", "wikipedia.org"]
-100.times {Bookmark.create!(url: urls.sample, topic: topics.sample)}
+100.times {Bookmark.create!(url: urls.sample, topic: topics.sample, user: users.sample)}

@@ -11,7 +11,7 @@ class TopicsController < ApplicationController
   def create
     @topic = current_user.topics.new(topic_params)
     @new_topic = Topic.new
-    
+    authorize @topic
     if @topic.save
       flash.now[:notice] = "Topic created successfully."
     else
@@ -26,7 +26,7 @@ class TopicsController < ApplicationController
   
   def destroy
     @topic = Topic.find(params[:id])
-    
+    authorize @topic
     if @topic.destroy
       flash[:notice] = "Topic was deleted."
     else
