@@ -4,15 +4,11 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.find(params[:id])
     
     if @bookmark.destroy
-      flash.now[:notice] = "Bookmark was deleted"
+      flash[:notice] = "Bookmark was deleted"
     else
-      flash.now[:error] = "Bookmark could not be deleted"
+      flash[:error] = "Bookmark could not be deleted"
     end
-    
-    respond_to do |format|
-      format.html
-      format.js
-    end
+    redirect_to :back
   end
 
   
