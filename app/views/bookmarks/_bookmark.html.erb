@@ -4,6 +4,7 @@
         <div class="col-md-3">
     <% end %>
     <a class="embedly-card" data-card-theme="light" data-card-chome="0" data-card-controls="0" href=<%= url_with_protocol(bookmark.url) %>></a>
+    <%= render partial: 'likes/like', locals: { bookmark: bookmark } %>
     <% if obj == "item" %>
         </div>
     <% end %>
