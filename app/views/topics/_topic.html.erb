@@ -1,4 +1,5 @@
 <% col = topic.bookmarks if local_assigns[:col].nil? %>
+<% col = col.select { |bookmark| bookmark.topic == topic } %> 
 <div class="panel panel-default" id=<%="#{topic.id}-panel" %>>
     <div class="panel-heading">
         <h2 class="panel-title"><%= link_to "##{topic.title}", topic %>
