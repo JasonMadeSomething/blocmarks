@@ -42,3 +42,5 @@ gem 'faker'
 gem 'embedly'
 
 gem 'pundit'
+
+gem 'friendly_id'

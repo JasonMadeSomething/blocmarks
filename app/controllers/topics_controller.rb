@@ -4,7 +4,7 @@ class TopicsController < ApplicationController
   end
 
   def show
-    @topic = Topic.find(params[:id])
+    @topic = Topic.friendly.find(params[:id])
   end
 
   
@@ -25,7 +25,7 @@ class TopicsController < ApplicationController
   end
   
   def destroy
-    @topic = Topic.find(params[:id])
+    @topic = Topic.friendly.find(params[:id])
     authorize @topic
     if @topic.destroy
       flash[:notice] = "Topic was deleted."
