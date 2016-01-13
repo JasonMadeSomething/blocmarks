@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
 
+  
+  root to: 'welcome#home'
   resources :topics, except: [:new, :edit, :update] do
     resources :bookmarks, only: [:destroy]
   end
@@ -9,6 +11,7 @@ Rails.application.routes.draw do
   end
   post :incoming, to: 'incoming#create'
   devise_for :users
-  root to: 'welcome#home'
+  resources :users, only: [:show]
+  
 
 end
