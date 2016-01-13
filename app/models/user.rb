@@ -12,4 +12,10 @@ class User < ActiveRecord::Base
   def liked(bookmark)
     likes.where(bookmark_id: bookmark.id).first
   end
+  
+  def liked_bookmarks
+    bookmarks = []
+    likes.each {|like| bookmarks << Bookmark.find(like.bookmark_id) }
+    bookmarks
+  end
 end

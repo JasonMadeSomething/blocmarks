@@ -1,3 +1,4 @@
+<% col = topic.bookmarks if local_assigns[:col].nil? %>
 <div class="panel panel-default" id=<%="#{topic.id}-panel" %>>
     <div class="panel-heading">
         <h2 class="panel-title"><%= link_to "##{topic.title}", topic %>
@@ -11,7 +12,7 @@
     <div class="panel-body" style="min-height:400px !important;">
         <div class="carousel" data-ride="carousel" data-interval="false" id=<%="#{topic.title}Carousel"%>>
             <div class="carousel-inner">
-                <%= render partial: '/bookmarks/bookmark', collection: topic.bookmarks, locals: {obj: "item" } %>
+                <%= render partial: '/bookmarks/bookmark', collection: col, locals: {obj: "item" } %>
             </div>
             <a class="left carousel-control" href=<%="##{topic.title}Carousel"%> data-slide="prev"></a>
             <a class="right carousel-control" href=<%="##{topic.title}Carousel"%> data-slide="next"></a>

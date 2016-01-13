@@ -1,2 +1,20 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="row">
+    <div class="col-md-10 col-md-offset-1 text-center page-header">
+        <h1><%= current_user == @user ? 'My ' : "#{@user.user_name}'s "%>Blocmarks Page</h1>
+    </div>
+    <div class="col-md-10 col-md-offset-1 text-center">
+        <h2><%= current_user == @user ? 'My ' : "#{@user.user_name}'s "%>Blocmarks</h2>
+    </div>    
+    <div class="col-md-10 col-md-offset-1">
+        <%= render partial: 'topics/topic', collection: @user_bookmark_topics, locals: {col: @user_bookmarks} %>
+    </div>
+    <div class="col-md-10 col-md-offset-1 text-center">
+        <h2><%= current_user == @user ? 'My ' : "#{@user.user_name}'s "%>Liked Blocmarks</h2>
+    </div>    
+    <div class="col-md-10 col-md-offset-1">
+        <%= render partial: 'topics/topic', collection: @liked_bookmarks_topics, locals: {col: @liked_bookmarks} %>
+    </div>
+</div>
+
+<script src="https://cdn.embed.ly/jquery.embedly-3.1.1.min.js" type="text/javascript"></script>
+<script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
