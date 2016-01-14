@@ -2,7 +2,9 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
+    $("#topic-form").toggle(false)
+    
     $("#add-icon").click ->
-        $("#topic-form").removeClass("hidden")
+        $("#topic-form").toggle()
     
     

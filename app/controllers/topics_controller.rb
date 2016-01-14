@@ -28,9 +28,9 @@ class TopicsController < ApplicationController
     @topic = Topic.friendly.find(params[:id])
     authorize @topic
     if @topic.destroy
-      flash[:notice] = "Topic was deleted."
+      flash.now[:notice] = "Topic was deleted."
     else
-      flash[:error] = "Topic could not be deleted."
+      flash.now[:error] = "Topic could not be deleted."
     end
     respond_to do |format|
       format.html

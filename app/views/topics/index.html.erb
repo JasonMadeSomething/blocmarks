@@ -3,7 +3,7 @@
         <h1>All Blocmarks<% if policy(Topic).create? %><a><span class='glyphicon glyphicon-plus pull-right' id="add-icon" title="Add Topic"></span></a><% end %></h1>
     </div>
     <div class="col-md-10 col-md-offset-1" id="topic-list">
-        <div class="hidden" id="topic-form">
+        <div id="topic-form">
             <%= render 'form', topic: Topic.new %>
         </div>
         <% @topics.each do |topic| %>
