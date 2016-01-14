@@ -1,23 +1,10 @@
-<% col = topic.bookmarks if local_assigns[:col].nil? %>
-<% col = col.select { |bookmark| bookmark.topic == topic } %> 
-<div class="panel panel-default" id=<%="#{topic.id}-panel" %>>
-    <div class="panel-heading">
-        <h2 class="panel-title"><%= link_to "##{topic.title}", topic %>
-            <% if policy(topic).destroy? %>
-                <%= link_to topic, method: :delete, remote: true, title: "Delete topic", data: {confirm: "Do you want to delete #{topic.title}?"} do %>
-                    <i class="glyphicon glyphicon-remove pull-right" style="color:red"></i>
-                <% end %>
+<div class="panel-heading">
+    <h3 class="panel-title"><%= link_to "##{topic.title}", topic %>
+        <% if policy(topic).destroy? %>
+            <%= link_to topic, method: :delete, remote: true, title: "Delete topic", data: {confirm: "Do you want to delete #{topic.title}?"} do %>
+                <i class="glyphicon glyphicon-remove pull-right" style="color:red"></i>
             <% end %>
-        </h2>
-    </div>
-    <div class="panel-body" style="min-height:400px !important;">
-        <div class="carousel" data-ride="carousel" data-interval="false" id=<%="#{topic.title}Carousel"%>>
-            <div class="carousel-inner">
-                <%= render partial: '/bookmarks/bookmark', collection: col, locals: {obj: "item" } %>
-            </div>
-            <a class="left carousel-control" href=<%="##{topic.title}Carousel"%> data-slide="prev"></a>
-            <a class="right carousel-control" href=<%="##{topic.title}Carousel"%> data-slide="next"></a>
-        </div>
-        
-    </div>
+        <% end %>
+    </h3>
 </div>
+

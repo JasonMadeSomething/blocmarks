@@ -1,20 +1,33 @@
 <div class="row">
     <div class="col-md-10 col-md-offset-1 text-center page-header">
-        <h1><%= current_user == @user ? 'My ' : "#{@user.user_name}'s "%>Blocmarks Page</h1>
+        <h1><%= show_name(@user) %>Blocmarks Page</h1>
     </div>
     <div class="col-md-10 col-md-offset-1 text-center">
-        <h2><%= current_user == @user ? 'My ' : "#{@user.user_name}'s "%>Blocmarks</h2>
+        <h2><%= show_name(@user) %>Blocmarks</h2>
     </div>    
     <div class="col-md-10 col-md-offset-1">
-        <%= render partial: 'topics/topic', collection: @user_bookmark_topics, locals: {col: @user_bookmarks} %>
+        <% @user_bookmarks.each do |topic| %>
+            <div class="panel panel-default" id=<%="#{topic.first.id}-panel" %>>
+                <%= render topic.first %>
+                <div class="panel-body">
+                    <%= render partial: "bookmarks/bookmark", collection: topic.last %>
+                </div>
+            </div>
+        <% end %>
     </div>
     <div class="col-md-10 col-md-offset-1 text-center">
-        <h2><%= current_user == @user ? 'My ' : "#{@user.user_name}'s "%>Liked Blocmarks</h2>
+        <h2><%= show_name(@user) %>Liked Blocmarks</h2>
     </div>    
     <div class="col-md-10 col-md-offset-1">
-        <%= render partial: 'topics/topic', collection: @liked_bookmarks_topics, locals: {col: @liked_bookmarks} %>
+        <% @liked_bookmarks.each do |topic| %>
+            <div class="panel panel-default" id=<%="#{topic.first.id}-panel" %>>
+                <%= render topic.first %>
+                <div class="panel-body">
+                    <%= render partial: "bookmarks/bookmark", collection: topic.last %>
+                </div>
+            </div>
+        <% end %>
     </div>
 </div>
 
-<script src="https://cdn.embed.ly/jquery.embedly-3.1.1.min.js" type="text/javascript"></script>
 <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
