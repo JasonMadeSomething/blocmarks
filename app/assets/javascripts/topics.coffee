@@ -7,4 +7,3 @@ $ ->
     $("#add-icon").click ->
         $("#topic-form").toggle()
     
-    
